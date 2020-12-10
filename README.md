@@ -92,7 +92,7 @@ bundle
 ```
 
 #### Create the databases
-And last create the development and test databases
+Last create the development and test databases in SQLite
 ```
 rails db:setup
 ```
