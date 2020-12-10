@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Read straight from the `.ruby-version` file to stay in sync
+ruby File.read('.ruby-version').chomp
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
 

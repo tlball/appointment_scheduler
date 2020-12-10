@@ -69,23 +69,30 @@ To run this application locally, first clone the GitHub repo
 git clone # TODO
 ```
 
-Ensure you have a Ruby 2.5 or greater installed
+#### Setup Ruby
+This app requires Ruby 2.6.3, but can be changed to use anything 2.5 or greater
+to prevent the need to install another version of Ruby.
+
+Check your version by running
 ```
 ruby --version
 ```
 
-If you do not have a valid version, follow the steps at https://rvm.io/ to get
-it installed. (NOTE: To allow some flexibility to those reviewing this app, the
-specific version of Ruby was not locked down, as would normally be done in a
-ruby application.)
+If it is not 2.6.3, but is 2.5 or greater replace the version listed in the
+`.ruby-version` file with your existing version.
 
+If you have a valid version of Ruby, install or update Ruby with your package manager of choice. Or
+install it using RVM following the steps at https://rvm.io/.
+
+#### Installing Gems
 Next you need to install the required gem libraries. Navigate to the root directory of the application and run:
 ```
 gem install bundler
 bundle
 ```
 
-And last create the databases
+#### Create the databases
+And last create the development and test databases
 ```
 rails db:setup
 ```
