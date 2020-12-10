@@ -92,9 +92,10 @@ bundle
 ```
 
 #### Create the databases
-Last create the development and test databases in SQLite
+Last create the development and test databases in SQLite and populate with seed data
 ```
-rails db:setup
+bundle exec rails db:setup
+bundle exec rails db:seed
 ```
 
 #### Running tests
