@@ -1,7 +1,7 @@
 class Appointment < ApplicationRecord
   belongs_to :user
 
-  validate :ensure_one_per_day
+  validate :ensure_one_per_day, :ensure_on_half_hours
 
   private
 
@@ -13,6 +13,15 @@ class Appointment < ApplicationRecord
 
     if todays_appointments.present?
       errors.add(:base, "User #{user_id} already has an appointment on #{start_at.to_date}")
+    end
+  end
+
+  def ensure_on_half_hours
+    beginning_of_hour = start_at.beginning_of_hour
+    half_hour = beginning_of_hour + 30.minutes
+
+    if ![beginning_of_hour, half_hour].include?(start_at)
+      errors.add(:base, "Appointments must be exactly on the half hours")
     end
   end
 end
