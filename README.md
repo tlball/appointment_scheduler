@@ -19,7 +19,7 @@ that user or returns an appropriate error if the appointment cannot be made
 (the user already has an appointment that day).
 
 ```
-POST /appointments
+POST /users/:id/appointments
 ```
 
 ##### Parameters
@@ -44,14 +44,14 @@ To view a patient's appointment, use the `GET` endpoint that takes a user ID
 (required) and returns all appointments for the user.
 
 ```
-GET /appointments
+GET /users/:id/appointments
 ```
 
 ##### Parameters
 
 | Name | Type | Requirement| Description |
 |------|------|------------|-------------|
-| `user_id` | `integer` | Required | The User ID for the patient whose appointments are to be viewed. |
+| `id` | `integer` | Required | The User ID for the patient to be viewed. |
 
 ##### Exceptions
 ##### Invalid User ID
@@ -60,8 +60,6 @@ If an unknown User ID is passed, the app will return a `404 Not Found` error.
 ##### Missing parameter
 If any required parameters are not sent in the request, the app will return a
 `400 Bad Request` error along with an appropriate error message.
-
-
 
 ### Running in a local environment
 To run this application locally, first clone the GitHub repo
