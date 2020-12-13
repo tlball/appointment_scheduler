@@ -28,7 +28,16 @@ POST /users/:id/appointments
 | Name | Type | Requirement| Description |
 |------|------|------------|-------------|
 | `start_at` | `datetime` | Required | This is the start time for the new appointment. |
-| `user_id` | `integer` | Required | The User ID for the patient that is attending the appointment. |
+| `id` | `integer` | Required | The User ID for the patient that is attending the appointment. |
+
+Data in the request should look like:
+```
+{
+  "appointment": {
+    "start_at": "2020-12-12 01:00:00"
+  }
+}
+```
 
 ##### Exceptions
 ###### Invalid dates
