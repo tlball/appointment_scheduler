@@ -2,6 +2,7 @@ class Appointment < ApplicationRecord
   LENGTH = 30.minutes
   belongs_to :user
 
+  validates :start_at, :user_id, presence: true
   validate :ensure_one_per_day, :ensure_on_half_hours
 
   # Can dynamically determine the end at so no need to store
