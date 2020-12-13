@@ -25,7 +25,7 @@ POST /users/:id/appointments
 ##### Parameters
 | Name | Type | Requirement| Description |
 |------|------|------------|-------------|
-| `begin_at` | `datetime` | Required | This is the start time for the new appointment. |
+| `start_at` | `datetime` | Required | This is the start time for the new appointment. |
 | `user_id` | `integer` | Required | The User ID for the patient that is attending the appointment. |
 
 ##### Exceptions
