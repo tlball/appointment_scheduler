@@ -29,3 +29,11 @@ end
 group :development do
   gem 'listen', '~> 3.3'
 end
+
+group :test do
+  # Generate factories for specs
+  gem 'factory_bot_rails'
+
+  # Generate fake spec data
+  gem 'ffaker'
+end
